@@ -19,7 +19,7 @@ from mne_bids import BIDSPath, write_raw_bids, read_raw_bids
 
 # the root path saving the raw data
 root = ""
-# the target path saving the processed data
+# the target path saving the preprocessed data
 save_dir = ""
 
 for id in range(1, 31):

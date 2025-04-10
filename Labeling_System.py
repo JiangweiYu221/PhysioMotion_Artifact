@@ -164,7 +164,7 @@ class MainWindow(QWidget):
                 if lines:
                     start, duration, _ = lines[-1].strip().split(',')
                     start_time = float(start) + float(duration)
-        self.data.plot(duration=40, n_channels=34, scalings=120, start=start_time, clipping=10)
+        self.data.plot(duration=40, n_channels=34, scalings=1e-4, start=start_time, clipping=10)
         # update canvas
         self.canvas.draw()
 
@@ -247,7 +247,7 @@ class InputDialog(QDialog):
                 if lines:
                     start, duration ,_  = lines[-1].strip().split(',')
                     start_time = float(start) + float(duration)
-        self.data.plot(duration=40, n_channels=34, scalings=120, start = start_time, clipping = 10)
+        self.data.plot(duration=40, n_channels=34, scalings=1e-4, start = start_time, clipping = 10)
 
         # update canvas
         self.canvas.draw()

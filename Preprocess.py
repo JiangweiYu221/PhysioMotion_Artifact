@@ -26,10 +26,9 @@ for id in range(1, 31):
     subID = str(id)
     for run in range(1,7):
         # raw BIDS path format
-        session = 'raw'
         task = 'artifact'
         datatype = 'eeg'
-        read_bids_path = BIDSPath(subject=subID, session=session, task=task,
+        read_bids_path = BIDSPath(subject=subID, task=task,
                              run=run, root=root, datatype=datatype)
         raw = read_raw_bids(read_bids_path)
         raw.load_data()

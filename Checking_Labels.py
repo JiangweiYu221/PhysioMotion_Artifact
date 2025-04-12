@@ -28,10 +28,9 @@ processed_data_path = ""
 class EEGInteractivePlot:
     def __init__(self, bids_root, subject_ID, subject_run, csv_root):
         # read preprocessed data in BIDS format
-        session = 'preprocessed'
         task = 'artifact'
         datatype = 'eeg'
-        bids_path = BIDSPath(subject=subject_ID, session=session, task=task, run=subject_run,
+        bids_path = BIDSPath(subject=subject_ID, task=task, run=subject_run,
                              root=bids_root, datatype=datatype)
 
         self.raw = read_raw_bids(bids_path)
@@ -41,7 +40,7 @@ class EEGInteractivePlot:
         self.n_rows = len(self.channels)
 
         # read auto marks
-        tsv_path = BIDSPath(subject=subject_ID, session=session, task=task, run=subject_run,
+        tsv_path = BIDSPath(subject=subject_ID, task=task, run=subject_run,
                             root=bids_root, datatype='eeg', suffix='events', extension='tsv')
         self.events_df = pd.read_csv(tsv_path, sep='\t')
 

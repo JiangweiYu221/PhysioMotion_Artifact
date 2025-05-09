@@ -1,2 +1,2 @@
-# Motion_Artifact
+# PhysioMotion_Artifact
 Code for motion artifact collection, preprocessing and labeling

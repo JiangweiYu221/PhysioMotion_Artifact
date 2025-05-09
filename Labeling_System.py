@@ -143,10 +143,11 @@ class MainWindow(QWidget):
         self.subject_name = self.textbox1.text()
 
         #BIDS path format
+        session = 'preprocessed'
         task = 'artifact'
         datatype = 'eeg'
         self.subject_run = self.textbox2.text()
-        bids_path = BIDSPath(subject=self.subject_name, task=task,
+        bids_path = BIDSPath(subject=self.subject_name, session=session, task=task,
                              run=int(self.subject_run), root=bids_root, datatype=datatype)
         self.data = read_raw_bids(bids_path)
         self.figure = Figure(figsize=(1, 1))
@@ -225,10 +226,11 @@ class InputDialog(QDialog):
         self.subject_name = self.parent().textbox1.text()
 
         # BIDS path format
+        session = 'preprocessed'
         task = 'artifact'
         datatype = 'eeg'
         self.subject_run = self.parent().textbox2.text()
-        bids_path = BIDSPath(subject=self.subject_name, task=task,
+        bids_path = BIDSPath(subject=self.subject_name, session=session, task=task,
                              run=int(self.subject_run), root=bids_root, datatype=datatype)
         self.data = read_raw_bids(bids_path)
         self.figure = Figure(figsize=(1, 1))

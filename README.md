@@ -7,5 +7,5 @@ sample.csv is the default channel option for different types of artifact.
   
 In classification folder:  
 Preprocess_and_Segment.py is the preprocessing pipeline before training.  
-Binary_classification.py provides the model for binary classification.  
-Multiclass_classification.py provides the model for multiclass classification.  
+model_B.py provides the model for binary classification.  
+model_M.py provides the model for multiclass classification.  
